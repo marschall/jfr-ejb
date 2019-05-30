@@ -11,6 +11,9 @@ import jdk.jfr.StackTrace;
 
 /**
  * An EJB interceptor that generates JFR events.
+ * <p>
+ * This method should not be subclassed. This class should not be instantiated
+ * called directly, instead it will get instantiated by the EJB container.
  */
 public class JfrInterceptor {
 
