@@ -13,10 +13,21 @@ import jdk.jfr.StackTrace;
  */
 public class JfrInterceptor {
 
+  /**
+   * Generates a JFR event around an EJB invocation.
+   * <p>
+   * This method should not be called directly, instead it will get called
+   * by the EJB container.
+   *
+   * @param ctx the invocation context
+   * @return the original return value
+   * @throws Exception when the EJB throws an exception
+   */
   public Object invoke(InvocationContext ctx) throws Exception {
     EjbEvent event = new EjbEvent();
     event.setEjbClass(ctx.getTarget().getClass());
     event.setMethodName(ctx.getMethod().getName());
+    event.begin();
     try {
       return ctx.proceed();
     } finally {
@@ -40,7 +51,7 @@ public class JfrInterceptor {
     private String methodName;
 
     Class<?> getEjbClass() {
-      return ejbClass;
+      return this.ejbClass;
     }
 
     void setEjbClass(Class<?> ejbClass) {
@@ -48,7 +59,7 @@ public class JfrInterceptor {
     }
 
     String getMethodName() {
-      return methodName;
+      return this.methodName;
     }
 
     void setMethodName(String methodName) {

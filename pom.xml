@@ -125,13 +125,6 @@
           <arguments>-Pdeploy-to-sonatype-oss</arguments>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>com.github.marschall</groupId>
-        <artifactId>jdeps-maven-plugin</artifactId>
-        <configuration>
-          <profile>true</profile>
-        </configuration>
-      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
