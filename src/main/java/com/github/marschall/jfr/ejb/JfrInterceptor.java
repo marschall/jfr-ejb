@@ -1,5 +1,6 @@
 package com.github.marschall.jfr.ejb;
 
+import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
 
 import jdk.jfr.Category;
@@ -23,6 +24,7 @@ public class JfrInterceptor {
    * @return the original return value
    * @throws Exception when the EJB throws an exception
    */
+  @AroundInvoke
   public Object invoke(InvocationContext ctx) throws Exception {
     EjbEvent event = new EjbEvent();
     event.setEjbClass(ctx.getTarget().getClass());
