@@ -1,7 +1,7 @@
 package com.github.marschall.jfr.ejb;
 
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.InvocationContext;
+import jakarta.interceptor.AroundInvoke;
+import jakarta.interceptor.InvocationContext;
 
 import jdk.jfr.Category;
 import jdk.jfr.Description;
