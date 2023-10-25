@@ -9,15 +9,17 @@ Contains only one class `com.github.marschall.jfr.ejb.JfrInterceptor` which only
 <dependency>
   <groupId>com.github.marschall</groupId>
   <artifactId>jfr-ejb</artifactId>
-  <version>0.1.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
+
+Versions 2.x are for the `jakarta.*` namespace, versions 1.x are for the `javax.*` namespace.
 
 Usage
 -----
 
 ```java
-import javax.interceptor.Interceptors;
+import jakarta.interceptor.Interceptors;
 
 import com.github.marschall.jfr.ejb.JfrInterceptor;
 
